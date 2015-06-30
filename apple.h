@@ -13,8 +13,14 @@ using namespace std;
 class Apple {
 	public :
 		int a;
-		Apple(){
+		Apple(){std::cout<<"default construct\n";}
+		Apple(int a){
+			this->a=a;
 			std::cout<<"construct Apple"<<std::endl;
+		}
+		Apple(const Apple & apple){
+			a=apple.a;
+			std::cout<<"copy construct Apple"<<std::endl;
 		}
 		~Apple(){
 			std::cout<<"disconstruct Apple \n";
@@ -26,4 +32,10 @@ class Apple {
 		void get(int  a,int){
 			std::cout<<"int \n";
 		}
+
+	Apple & operator =(Apple & apple){
+		cout<<"operator ="<<endl;
+		this->a=apple.a;
+		return *this;
+	}
 };
