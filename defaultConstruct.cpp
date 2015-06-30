@@ -16,7 +16,7 @@ class Base {
 		int i; //
 /*
  *        no default CS result:
- *        编译器合成的默认构造函数 初始化为
+ *        编译器合成的默认构造函数 不初始化i，随机值
  *        Press ENTER or type command to continue
  *            -129005285632767
  *            0.00user 0.00system 0:00.02elapsed 0%CPU (0avgtext+0avgdata 4464maxresident)k
