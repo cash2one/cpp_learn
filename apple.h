@@ -10,6 +10,8 @@
 #include<iostream>
 #include<string>
 using namespace std;
+#define print(val) std::cout<<#val<<": "<<val<<std::endl;
+
 class Apple {
     public :
         Apple():b(6){std::cout<<"default construct\n"; }
