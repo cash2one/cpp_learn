@@ -20,10 +20,10 @@
 
 int main() {
     std::map<int, int> imap;
-    imap.insert(std::make_pair(1, 2));
+    imap.insert(std::make_pair(1, 1));
     imap.insert(std::make_pair(1, 2));
     imap.insert(std::make_pair(1, 3));
 
-    std::cout<<imap.size()<<"-"<<imap[1];         /**<   1-2  相同的key没有insert进去     */
+    std::cout<<imap.size()<<"-"<<imap[1];                 /**<    1-1    */
     return 0;
 }

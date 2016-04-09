@@ -17,20 +17,20 @@
 /* vim: set ts=4 sw=4 sts=4 tw=100 */
 #include "object.h"
 
-static std::map<string, create_fun> *info_map = NULL;
+static std::map<string, create_fun> *g_info_map = NULL;
 void Object::Register(ClassInfo *class_info) {
-    if (NULL == info_map) {
-        info_map = new std::map<string, create_fun>();
+    if (NULL == g_info_map) {
+        g_info_map = new std::map<string, create_fun>();
     }
 
-    if (info_map->find(class_info->_class_name) == info_map->end()) {
-         info_map->insert(std::make_pair(class_info->_class_name, class_info->_func));
+    if (g_info_map->find(class_info->_class_name) == g_info_map->end()) {
+         g_info_map->insert(std::make_pair(class_info->_class_name, class_info->_func));
     }
 }
 
 Object * Object::CreateObject(string class_name) {
-    if (info_map->find(class_name) != info_map->end()) {
-        return (info_map->find(class_name)->second)();
+    if (g_info_map->find(class_name) != g_info_map->end()) {
+        return (g_info_map->find(class_name)->second)();
     }
     return NULL;
 }
