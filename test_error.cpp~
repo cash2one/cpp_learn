@@ -26,6 +26,7 @@ int main() {
     perror("xxx");
     std::string s;
     std::vector<int> vi;
+    s.
     vi.pop_back();
     vi.at(45)
     /*
