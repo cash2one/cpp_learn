@@ -2,13 +2,13 @@
 #include <utility>
 
 using std::cout;
-
+using std::endl;
 template<typename T>
 void print(T& t){
     cout << "lvalue" << endl;
 }
 template<typename T>
-void print(T&& t){
+void print(T && t){
     cout << "rvalue" << endl;
 }
 
